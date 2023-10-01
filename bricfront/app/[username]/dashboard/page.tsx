@@ -3,7 +3,7 @@ import Attendance from '@/components/Stats/Construction/Attendance/Attendance'
 export default function page() {
   return (
     <div>
-        <Attendance />
+        <Attendance totalAttendance={21} />
     </div>
   )
 }

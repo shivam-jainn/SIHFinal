@@ -1,10 +1,12 @@
 import React from 'react'
 import { IconUsers } from '@tabler/icons-react'
-export default function Attendance() {
+import {Paper} from '@mantine/core'
+
+export default function Attendance({totalAttendance}) {
   return (
-    <div>
+    <Paper shadow="xs" p="xl">
         <IconUsers />
-        Hiiiiiiiiiiiiiiiiiiiiii
-    </div>
+        {totalAttendance}
+    </Paper>
   )
 }
