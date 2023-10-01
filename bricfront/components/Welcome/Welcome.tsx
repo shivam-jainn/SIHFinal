@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Text, Button, Group } from '@mantine/core';
 import classes from './Welcome.module.css';
 
