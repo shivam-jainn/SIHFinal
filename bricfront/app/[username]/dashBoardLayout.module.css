@@ -1,0 +1,4 @@
+.dashBoardLayout{
+    display: grid;
+grid-template-columns: rem(310px) auto ;
+}
