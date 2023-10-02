@@ -1,3 +1,6 @@
+"use client"
+
+import React   from 'react';
 import { Paper, Text, TextInput, Textarea, Button, Group, SimpleGrid } from '@mantine/core';
 import { ContactIconsList } from './ContactIcons';
 import bg from './bg.svg';

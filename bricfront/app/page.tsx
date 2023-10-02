@@ -9,8 +9,8 @@ export default function HomePage() {
     <>
       <Welcome />
       <FeaturesTitle/>
-      <FooterSocial />
       <GetInTouch />
+      <FooterSocial />
     </>
   );
 }
