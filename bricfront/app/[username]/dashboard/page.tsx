@@ -1,9 +1,12 @@
 import React from 'react'
 import Attendance from '@/components/Stats/Construction/Attendance/Attendance'
+import ViewsTabs from '@/components/ViewsTabs/ViewsTabs'
+
 export default function page() {
   return (
     <div>
-        <Attendance totalAttendance={21} />
+        <div>Description</div>
+
     </div>
   )
 }
