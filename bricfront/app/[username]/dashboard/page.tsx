@@ -5,6 +5,7 @@ import ViewsTabs from '@/components/ViewsTabs/ViewsTabs'
 export default function page() {
   return (
     <div>
+
         <div>Description</div>
 
     </div>

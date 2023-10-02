@@ -28,7 +28,6 @@ export default function layout({children}) {
     <AppShell
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
            padding="md"
-
     >
 
 <AppShell.Navbar p="md">

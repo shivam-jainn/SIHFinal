@@ -11,6 +11,7 @@ function SegmentedControlViews() {
 
 export default function ViewsCard() {
   return (
+    
     <Paper shadow="sm" withBorder p="xl">
         <SegmentedControlViews />
         <StatDashBoard />
