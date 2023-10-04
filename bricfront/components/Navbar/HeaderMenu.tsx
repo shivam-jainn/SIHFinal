@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { Button } from '@mantine/core';
 import { Menu, Group, Center, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
@@ -58,6 +59,10 @@ export function HeaderMenu() {
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
       );
+    }
+
+    if(link.label=='Login'){
+      return <Button variant="filled">Login</Button>;
     }
 
     return (
