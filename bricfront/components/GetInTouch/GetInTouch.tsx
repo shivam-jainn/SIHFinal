@@ -20,20 +20,20 @@ export function GetInTouch() {
 
         <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
           <Text fz="lg" fw={700} className={classes.title}>
-            Get in touch
+            Contact Us
           </Text>
 
           <div className={classes.fields}>
             <SimpleGrid cols={{ base: 1, sm: 2 }}>
-              <TextInput label="Your name" placeholder="Your name" />
-              <TextInput label="Your email" placeholder="hello@mantine.dev" required />
+              <TextInput label="Name" placeholder="Your name" />
+              <TextInput label="Email" placeholder="your@email.com" required />
             </SimpleGrid>
 
             <TextInput mt="md" label="Subject" placeholder="Subject" required />
 
             <Textarea
               mt="md"
-              label="Your message"
+              label="Message"
               placeholder="Please include all relevant information"
               minRows={3}
             />
