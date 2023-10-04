@@ -6,7 +6,7 @@ export default function page() {
   return (
     <div>
 
-        <div>Description</div>
+        <div>NHAI border road 12</div>
 
     </div>
   )

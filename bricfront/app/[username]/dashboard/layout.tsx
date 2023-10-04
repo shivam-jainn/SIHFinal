@@ -5,7 +5,7 @@ import ViewsCard from '@/components/ViewsCard/ViewsCard'
 export default function layout({children}) {
   return (
     <>    
-    <ViewsTabs />
+    <ViewsTabs  />
 
 
     {children}
