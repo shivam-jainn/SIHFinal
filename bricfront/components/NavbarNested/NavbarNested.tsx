@@ -55,12 +55,12 @@ export function NavbarNested() {
 
   return (
     <nav className={classes.navbar}>
-      <div className={classes.header}>
+      {/* <div className={classes.header}>
         <Group justify="space-between">
           <Logo style={{ width: rem(120) }} />
           <Code fw={700}>v3.1.2</Code>
         </Group>
-      </div>
+      </div> */}
 
       <ScrollArea className={classes.links}>
         <div className={classes.linksInner}>{links}</div>

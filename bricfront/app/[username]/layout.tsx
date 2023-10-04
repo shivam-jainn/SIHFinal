@@ -1,50 +1,43 @@
 "use client"
-import React, { Children } from 'react'
-// import { NavbarNested } from '@/components/NavbarNested/NavbarNested'
-// import classes from './dashBoardLayout.module.css'
-// export default function Layout({children}) {
-//   return (
-//     <div className={classes.dashBoardLayout}>
-//         <NavbarNested />
-//         <div>
-//           {children}
-//         </div>
-        
-//     </div>
-//   )
-// }
-
-
+import React from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Burger, Group, Skeleton, ScrollArea } from '@mantine/core';
-import { MantineLogo } from '@mantine/ds';
+import { AppShell, ScrollArea, UnstyledButton, Box } from '@mantine/core'; // Import missing components
 import { UserButton } from '@/components/UserButton/UserButton';
+import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
+import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
 
+const projects = ["NHAI road 12",  "add project"];
 
-export default function layout({children}) {
-  const [opened, { toggle }] = useDisclosure();
+export default function Layout({ children }) {
+  const { opened, toggle } = useDisclosure();
+
+  const links = projects.map((item) => (
+    <UnstyleBoxSomething label={item} key={item} /> 
+  ));
+
+  function UnstyleBoxSomething({ label }) {
+    return (
+      <UnstyledButton className={classes.control}>
+        <Box style={{ display: 'flex', alignItems: 'center' }}>
+          {label}
+        </Box>
+      </UnstyledButton>
+    );
+  }
 
   return (
     <AppShell
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
-           padding="md"
+      padding="md"
     >
-
-<AppShell.Navbar p="md">
-         <AppShell.Section>Navbar header</AppShell.Section>
-         <AppShell.Section grow my="md" component={ScrollArea}>
-           60 links in a scrollable section
-           {Array(60)
-             .fill(0)
-             .map((_, index) => (
-               <Skeleton key={index} h={28} mt="sm" animate={false} />
-             ))}
-         </AppShell.Section>
-         <AppShell.Section> <UserButton /> </AppShell.Section>
-       </AppShell.Navbar>
-       <AppShell.Main>{children}</AppShell.Main>
-
+      <AppShell.Navbar p="md">
+        <AppShell.Section>Navbar header</AppShell.Section>
+        <AppShell.Section grow my="md" component={ScrollArea}>
+          <div className={classes.linksInner}>{links}</div>
+        </AppShell.Section>
+        <AppShell.Section> <UserButton /> </AppShell.Section>
+      </AppShell.Navbar>
+      <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
-  )
+  );
 }
-
