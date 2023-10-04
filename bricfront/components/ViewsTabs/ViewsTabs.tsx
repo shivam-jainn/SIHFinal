@@ -3,7 +3,7 @@ import React from 'react';
 import { Tabs } from '@mantine/core';
 
 
-export default function ViewsTabs({views}) {
+export default function ViewsTabs() {
   return (
     <Tabs defaultValue="Overview">
     <Tabs.List>
