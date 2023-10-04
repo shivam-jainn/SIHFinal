@@ -7,25 +7,37 @@ import classes from './FeaturesTitle.module.css';
 const features = [
   {
     icon: IconReceiptOff,
-    title: 'Free and open source',
-    description: 'All packages are published under MIT license, you can use Mantine in any project',
-  },
-  {
-    icon: IconFileCode,
-    title: 'TypeScript based',
-    description: 'Build type safe applications, all components and hooks export types',
-  },
-  {
-    icon: IconCircleDotted,
-    title: 'No annoying focus ring',
-    description:
-      'With new :focus-visible selector focus ring will appear only when user navigates with keyboard',
+    title: 'Real-time Monitoring',
+    description: 'Continuous tracking of machine status, personnel activities, and material usage with live updates.',
   },
   {
     icon: IconFlame,
-    title: 'Flexible',
+    title: 'Plug and Play',
     description:
-      'Customize colors, spacing, shadows, fonts and many other settings with global theme object',
+      'Easy to plug IOT devices into the system for real-time monitoring and tracking of data according to your project requirements.',
+  },
+  {
+    icon: IconFileCode,
+    title: 'Machine Health Dashboard',
+    description: 'Comprehensive insights into the condition of machines, including performance metrics, maintenance history, and alerts for issues.',
+  },
+  {
+    icon: IconCircleDotted,
+    title: 'Personnel Management',
+    description:
+      'User profiles, roles, certifications, and activity logs for managing and tracking personnel effectively.',
+  },
+  {
+    icon: IconFlame,
+    title: 'Materials Inventory',
+    description:
+      'Inventory management tools for monitoring stock levels, tracking material consumption, and generating reorder alerts.',
+  },
+  {
+    icon: IconFlame,
+    title: 'Forecasting with Alerts',
+    description:
+      'Predictive analytics to forecast machine maintenance needs, personnel scheduling, and material requirements.',
   },
 ];
 
@@ -54,11 +66,10 @@ export function FeaturesTitle() {
       <Grid gutter={80}>
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Title className={classes.title} order={2}>
-            A fully featured React components library for your next project
+          Track & manage in real time. Emphasizing data security and scalability.
           </Title>
           <Text c="dimmed">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+          Foundation of a comprehensive system for tracking and managing machines, personnel, and materials effectively, depending on the project's scope and requirements.
           </Text>
 
           <Button
