@@ -21,8 +21,11 @@
     "@mantine/notifications": "^7.1.0",
     "@tabler/icons-react": "^2.38.0",
     "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
