@@ -14,7 +14,7 @@ export function Welcome() {
           for your next project.
         </h1>
 
-        <Text className={classes.description} color="dimmed">
+        <Text className={classes.description}>
         Get a real-time dashboard for monitoring machine health, personnel data, and material information.
         </Text>
 
