@@ -7,16 +7,15 @@ export function Welcome() {
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
-          A{' '}
+          A real-time dashboard by{' '}
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
-            fully featured
+            BricBoard
           </Text>{' '}
-          React components and hooks library
+          for your next project.
         </h1>
 
-        <Text className={classes.description} color="dimmed">
-          Build fully functional accessible web applications with ease – Mantine includes more than
-          100 customizable components and hooks to cover you in any situation
+        <Text className={classes.description}>
+        Get a real-time dashboard for monitoring machine health, personnel data, and material information.
         </Text>
 
         <Group className={classes.controls}>
