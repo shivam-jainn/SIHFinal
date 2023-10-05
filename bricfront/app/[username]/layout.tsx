@@ -1,12 +1,12 @@
 "use client"
-import React from 'react';
-import { useDisclosure } from '@mantine/hooks';
-import { AppShell, ScrollArea, UnstyledButton, Box } from '@mantine/core'; // Import missing components
-import { UserButton } from '@/components/UserButton/UserButton';
-import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
+import { UserButton } from '@/components/UserButton/UserButton';
+import { AppShell, Box, ScrollArea, UnstyledButton } from '@mantine/core'; // Import missing components
+import { useDisclosure } from '@mantine/hooks';
+import React from 'react';
+import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 
-const projects = ["NHAI road 12",  "add project"];
+const projects = ["NHAI road 12", 'Add Project +'];
 
 export default function Layout({ children }) {
   const { opened, toggle } = useDisclosure();
