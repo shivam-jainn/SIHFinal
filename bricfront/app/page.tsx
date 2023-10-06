@@ -4,6 +4,8 @@ import { Welcome } from '../components/Welcome/Welcome';
 import { FooterSocial } from '@/components/Footer/FooterSocial';
 import { GetInTouch } from '@/components/GetInTouch/GetInTouch';
 import { HeaderMenu } from '@/components/Navbar/HeaderMenu';
+import { SampleData } from '@/components/SampleData/SampleData';
+
 export default function HomePage() {
   return (
     <>
@@ -12,6 +14,7 @@ export default function HomePage() {
       <FeaturesTitle/>
       <GetInTouch />
       <FooterSocial />
+      <SampleData />
     </>
   );
 }
