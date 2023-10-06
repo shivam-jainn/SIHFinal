@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { Button } from '@mantine/core';
 import { Menu, Group, Center, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
@@ -11,25 +12,25 @@ const links = [
   { link: '/about', label: 'Features' },
   {
     link: '#1',
-    label: 'Learn',
+    label: 'Assets',
     links: [
-      { link: '/docs', label: 'Documentation' },
-      { link: '/resources', label: 'Resources' },
-      { link: '/community', label: 'Community' },
-      { link: '/blog', label: 'Blog' },
+      { link: '/machines', label: 'Machines' },
+      { link: '/personnel', label: 'Personnel' },
+      { link: '/materials', label: 'Materials' },
+      { link: '/reports', label: 'Reports' },
+      { link: '/alerts', label: 'Alerts and Notifications' },
     ],
   },
   { link: '/about', label: 'About' },
-  { link: '/pricing', label: 'Pricing' },
   {
     link: '#2',
     label: 'Support',
     links: [
+      { link: '/contactus', label: 'Contact Us' },
       { link: '/faq', label: 'FAQ' },
-      { link: '/demo', label: 'Book a demo' },
-      { link: '/forums', label: 'Forums' },
     ],
   },
+  {link: '/login', label: 'Login'},
 ];
 
 export function HeaderMenu() {
@@ -58,6 +59,10 @@ export function HeaderMenu() {
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
       );
+    }
+
+    if(link.label=='Login'){
+      return <Button variant="filled">Login</Button>;
     }
 
     return (

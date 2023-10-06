@@ -2,10 +2,12 @@ import ViewsCard from '@/components/ViewsCard/ViewsCard'
 import ViewsTabs from '@/components/ViewsTabs/ViewsTabs'
 import React from 'react'
 
-export default function layout({children,data}) {
+export default function layout({children}) {
   return (
+
     // <>    
     // <ViewsTabs views={data.views} />
+
 
  <> idk what this is</>
     // {children}
