@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,46 +6,39 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-// Define the User model
+
 model User {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(auto()) @map("_id") // You should use the appropriate ID type for MongoDB, like ObjectId or String
   email     String    @unique
   password  String
   firstName String
   lastName  String
-  // Define a relation to the Organization model
-  organization Organization @relation(fields: [organizationId], references: [id])
-  organizationId Int
-  // Define a relation to the Role model to represent the user's privileges
-  role Role @relation(fields: [roleId], references: [id])
-  roleId Int
-  // Define a relation for the user's higher escalated user (manager)
-  manager User? @relation("ManagerToUser", fields: [managerId], references: [id])
-  managerId Int?
+  projects  Project[]
+  views View[]
+  @@map("users")
 }
 
-// Define the Organization model
-model Organization {
-  id       Int     @id @default(autoincrement())
-  name     String
-  // Define a relation to the User model to represent users in the organization
-  users    User[]
+model Project {
+  id         String   @id @default(auto()) @map("_id") // You should use the appropriate ID type for MongoDB, like ObjectId or String
+  projectName String
+  users      User[]   @relation("UserProjects", references: [id])
+
+  @@map("projects")
 }
 
-// Define the Role model
-model Role {
-  id      Int      @id @default(autoincrement())
-  name    String
-  // Define a relation to the User model to associate users with roles
-  users   User[]
-  // Define a relation to the DashboardComponent model to specify access permissions
-  dashboardComponents DashboardComponent[]
+model View {
+  id      String   @id @default(auto()) @map("_id") // You should use the appropriate ID type for MongoDB, like ObjectId or String
+  viewName String
+  components Component[]  //bunch of component ids
+  read Boolean
+  write Boolean
+  share Boolean
+  @@map("views")
 }
 
-// Define the DashboardComponent model
-model DashboardComponent {
-  id      Int      @id @default(autoincrement())
-  name    String
-  // Define a relation to the Role model to specify which roles have access to this component
-  roles   Role[]
+model Component {
+  id       String    @id @default(auto()) @map("_id") // You should use the appropriate ID type for MongoDB, like ObjectId or String
+  user     User[]    
+  
+  @@map("components")
 }
