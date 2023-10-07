@@ -1,9 +1,15 @@
 "use client"
 import React, { useState } from 'react';
-import { AppShell, Box, Button, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core';
 import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/icons-react';
+
+import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
+
+
+import { AppShell, Box, Button, Modal, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core'; // Import missing components
 import { useDisclosure } from '@mantine/hooks';
-import ViewTab from '@/components/ViewTab/ViewTab';
+
+import SharedTab from '@/components/TabShared/SharedTab';
+import ViewTab from '@/components/TabView/ViewTab';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from './dashBoardLayout.module.css';
 import AddProject from '@/components/Addproject/AddProject';
@@ -12,9 +18,12 @@ import { UserButton } from '@/components/UserButton/UserButton';
 const projects = ["NHAI road 12", 'Add Project +'];
 
 export default function Layout({ children }) {
-  const { opened, toggle } = useDisclosure();
+
   const [showAddView, setShowAddView] = useState(false);
   const [showAddProject, setShowAddProject] = useState(false);
+  // const { opened, toggle } = useDisclosure();
+  const [opened, { open, close }] = useDisclosure(false);
+
 
   const tabstyles = { fontSize: "20px" };
   const iconStyle = { width: rem(20), height: rem(20) };
@@ -53,6 +62,7 @@ export default function Layout({ children }) {
       </AppShell.Navbar>
 
       <AppShell.Main>
+
         {showAddProject ? (
           <AddProject />
         ) : showAddView ? (
@@ -85,6 +95,11 @@ export default function Layout({ children }) {
           </Tabs>
         )}
       </AppShell.Main>
+
+        //  <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
+      //  <AddViewModal onClose={close}/>
+      //</Modal>
+     
     </AppShell>
   );
 }
