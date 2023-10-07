@@ -15,7 +15,7 @@ export default function AddView() {
 
         <Paper shadow="xs" withBorder p="xl" style={{maxWidth:'600px'}}>
       <Text size="4rem" fw={1000} style={{  textAlign: 'left' }}>
-        One brick at a time. Join your next project by entering the code.
+        One View at a time. Add your next view by entering the code.
       </Text>
       
       <Paper withBorder style={{padding:'1rem',display:'flex',justifyContent:'space-between',marginTop:'2rem'}}>
