@@ -10,7 +10,7 @@ import React from 'react';
 
 import SharedTab from '@/components/TabShared/SharedTab';
 import ViewTab from '@/components/TabView/ViewTab';
-import ViewDetails from '@/components/ViewDetails/ViewDetails';
+import AddViewModal from '@/components/ViewDetails/AddViewModal';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from "./dashBoardLayout.module.css";
 
@@ -62,7 +62,7 @@ export default function Layout({ children }) {
 
       <AppShell.Main>
       <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
-        <ViewDetails/>
+        <AddViewModal onClose={close}/>
       </Modal>
         <Tabs variant="outline" defaultValue="gallery" >
       <Tabs.List >
