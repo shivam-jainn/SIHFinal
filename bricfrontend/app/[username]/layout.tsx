@@ -10,7 +10,7 @@ import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
 import { UserButton } from '@/components/UserButton/UserButton';
 import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
-const projects = ["NHAI road 12", 'Add Project +'];
+const projects = ["NHAI road 12"];  
 
 export default function Layout({ children }) {
   const { opened, toggle } = useDisclosure();
