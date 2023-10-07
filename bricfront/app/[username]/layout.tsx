@@ -8,9 +8,9 @@ import { AppShell, Box, Button, Modal, ScrollArea, Tabs, UnstyledButton, rem } f
 import { useDisclosure } from '@mantine/hooks';
 import React from 'react';
 
-import SharedView from '@/components/SharedTab/SharedTab';
+import SharedTab from '@/components/TabShared/SharedTab';
+import ViewTab from '@/components/TabView/ViewTab';
 import ViewDetails from '@/components/ViewDetails/ViewDetails';
-import ViewTab from '@/components/ViewTab/ViewTab';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from "./dashBoardLayout.module.css";
 
@@ -89,7 +89,7 @@ export default function Layout({ children }) {
       </Tabs.Panel>
 
       <Tabs.Panel value="settings">
-        <SharedView />
+        <SharedTab />
       </Tabs.Panel>
     </Tabs></AppShell.Main>
     </AppShell>
