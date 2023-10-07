@@ -9,6 +9,7 @@ import styles from './dashBoardLayout.module.css';
 import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
 import { UserButton } from '@/components/UserButton/UserButton';
+import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
 const projects = ["NHAI road 12", 'Add Project +'];
 
 export default function Layout({ children }) {
@@ -66,15 +67,19 @@ export default function Layout({ children }) {
               <Tabs.Tab value="messages" style={tabstyles} leftSection={<IconMessageCircle style={iconStyle} />}>
                 Issues
               </Tabs.Tab>
-              {/* <Tabs.Tab value="settings" style={tabstyles} leftSection={<IconSettings style={iconStyle} />}>
-                Settings
-              </Tabs.Tab> */}
+              <Tabs.Tab value="shared" style={tabstyles} leftSection={<IconSettings style={iconStyle} />}>
+                Shared
+              </Tabs.Tab>
               <Button variant="filled" rightSection={<IconPlus size={14} />} onClick={() => setShowAddView(true)}>
                 Add view
               </Button>
+
+              <Button variant="filled" onClick={() => setShowAddView(true)}>
+                Share view
+              </Button>
             </Tabs.List>
             <Tabs.Panel value="gallery">
-              <ViewTab />
+              <LeadGrid />
             </Tabs.Panel>
             <Tabs.Panel value="messages">
               Messages tab content
