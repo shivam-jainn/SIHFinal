@@ -96,9 +96,11 @@ export default function Layout({ children }) {
         )}
       </AppShell.Main>
 
+
         {/* //  <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
       //  <AddViewModal onClose={close}/>
       //</Modal> */}
+
      
     </AppShell>
   );
