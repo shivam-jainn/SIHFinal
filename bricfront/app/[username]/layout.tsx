@@ -1,37 +1,35 @@
 "use client"
+import React, { useState } from 'react';
+import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/icons-react';
+
 import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
-import { IconMessageCircle, IconPhoto, IconPlus, IconUserShare } from '@tabler/icons-react';
 
 
-import { UserButton } from '@/components/UserButton/UserButton';
 import { AppShell, Box, Button, Modal, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core'; // Import missing components
 import { useDisclosure } from '@mantine/hooks';
-import React from 'react';
 
 import SharedTab from '@/components/TabShared/SharedTab';
 import ViewTab from '@/components/TabView/ViewTab';
-import AddViewModal from '@/components/ViewDetails/AddViewModal';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
-import styles from "./dashBoardLayout.module.css";
-
+import styles from './dashBoardLayout.module.css';
+import AddProject from '@/components/Addproject/AddProject';
+import AddView from '@/components/Addproject/View/AddView';
+import { UserButton } from '@/components/UserButton/UserButton';
 const projects = ["NHAI road 12", 'Add Project +'];
 
 export default function Layout({ children }) {
+
+  const [showAddView, setShowAddView] = useState(false);
+  const [showAddProject, setShowAddProject] = useState(false);
   // const { opened, toggle } = useDisclosure();
   const [opened, { open, close }] = useDisclosure(false);
 
 
-  // inline objects styles defined here
-  const tabstyles = {fontSize:"20px" }
+  const tabstyles = { fontSize: "20px" };
   const iconStyle = { width: rem(20), height: rem(20) };
-   const addViewStyle = { position:'absolute', right:50, padding:10,  bottom:5}
-
-
-
-
 
   const links = projects.map((item) => (
-    <UnstyleBoxSomething label={item} key={item} /> 
+    <UnstyleBoxSomething label={item} key={item} />
   ));
 
   function UnstyleBoxSomething({ label }) {
@@ -50,48 +48,58 @@ export default function Layout({ children }) {
       padding="md"
     >
       <AppShell.Navbar p="md">
-        <AppShell.Section>Navbar header</AppShell.Section>
         <AppShell.Section grow my="md" component={ScrollArea}>
           <div className={classes.linksInner}>{links}</div>
         </AppShell.Section>
-        <AppShell.Section> <UserButton /> </AppShell.Section>
+        <AppShell.Section>
+          <Button fullWidth rightSection={<IconPlus size={14} />} onClick={() => setShowAddProject(true)}  >
+            Add Project
+          </Button>
+        </AppShell.Section>
+        <AppShell.Section>
+          <UserButton />
+        </AppShell.Section>
       </AppShell.Navbar>
 
-
-
-
       <AppShell.Main>
-      <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
-        <AddViewModal onClose={close}/>
-      </Modal>
-        <Tabs variant="outline" defaultValue="gallery" >
-      <Tabs.List >
-        <Tabs.Tab  value="gallery" style={tabstyles} leftSection={<IconPhoto style={iconStyle} />}>
-          Overview
-        </Tabs.Tab>
-        <Tabs.Tab value="messages" style={tabstyles} leftSection={<IconMessageCircle style={iconStyle} />}>
-          Issues
-        </Tabs.Tab>
-        <Tabs.Tab value="settings" style={tabstyles} leftSection={<IconUserShare style={iconStyle} />}>
-          Shared
-        </Tabs.Tab>
-        <Button onClick={open} style={addViewStyle} variant="filled" rightSection={<IconPlus size={14} />} >
-        Add view
-      </Button>
-      </Tabs.List>
 
-      <Tabs.Panel value="gallery">
-      <ViewTab />
-      </Tabs.Panel>
+        {showAddProject ? (
+          <AddProject />
+        ) : showAddView ? (
+          <AddView />
+        ) : (
+          <Tabs variant="outline" defaultValue="gallery">
+            <Tabs.List>
+              <Tabs.Tab value="gallery" style={tabstyles} leftSection={<IconPhoto style={iconStyle} />}>
+                Overview
+              </Tabs.Tab>
+              <Tabs.Tab value="messages" style={tabstyles} leftSection={<IconMessageCircle style={iconStyle} />}>
+                Issues
+              </Tabs.Tab>
+              {/* <Tabs.Tab value="settings" style={tabstyles} leftSection={<IconSettings style={iconStyle} />}>
+                Settings
+              </Tabs.Tab> */}
+              <Button variant="filled" rightSection={<IconPlus size={14} />} onClick={() => setShowAddView(true)}>
+                Add view
+              </Button>
+            </Tabs.List>
+            <Tabs.Panel value="gallery">
+              <ViewTab />
+            </Tabs.Panel>
+            <Tabs.Panel value="messages">
+              Messages tab content
+            </Tabs.Panel>
+            <Tabs.Panel value="settings">
+              Settings tab content
+            </Tabs.Panel>
+          </Tabs>
+        )}
+      </AppShell.Main>
 
-      <Tabs.Panel value="messages">
-        Messages tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="settings">
-        <SharedTab />
-      </Tabs.Panel>
-    </Tabs></AppShell.Main>
+        //  <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
+      //  <AddViewModal onClose={close}/>
+      //</Modal>
+     
     </AppShell>
   );
 }
