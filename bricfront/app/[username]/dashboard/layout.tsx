@@ -1,16 +1,18 @@
-import React from 'react'
-import ViewsTabs from '@/components/ViewsTabs/ViewsTabs'
 import ViewsCard from '@/components/ViewsCard/ViewsCard'
+import ViewsTabs from '@/components/ViewsTabs/ViewsTabs'
+import React from 'react'
 
 export default function layout({children}) {
   return (
-    <>    
-    <ViewsTabs  />
+
+    // <>    
+    // <ViewsTabs views={data.views} />
 
 
-    {children}
+ <> idk what this is</>
+    // {children}
     
-    <ViewsCard />
-    </>
+    // <ViewsCard />
+    // </>
   )
 }

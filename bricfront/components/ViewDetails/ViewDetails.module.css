@@ -1,0 +1,10 @@
+.bottomAction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyButtons {
+  display: flex;
+  gap: 1rem;
+  margin: 0 1rem;
+}
