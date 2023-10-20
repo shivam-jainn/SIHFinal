@@ -11,7 +11,15 @@ import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/ic
 import React, { useState } from 'react';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from './dashBoardLayout.module.css';
-const projects = ["NHAI road 12", 'Add Project +'];
+
+import AddProject from '@/components/Addproject/AddProject';
+import AddView from '@/components/Addproject/View/AddView';
+import { UserButton } from '@/components/UserButton/UserButton';
+import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
+import SharedMakeView from '@/components/SharedMakeView/SharedMakeView';
+
+const projects = ["NHAI road 12"];  
+
 
 export default function Layout({ children }) {
   const { opened, toggle } = useDisclosure();
@@ -74,15 +82,19 @@ export default function Layout({ children }) {
               <Tabs.Tab value="shared" style={tabstyles} leftSection={<IconSettings style={iconStyle} />}>
                 Shared
               </Tabs.Tab>
+
              <div style={{position:'absolute', display:"flex", gap:"1rem",right:50}}>
              <Button variant="filled" rightSection={<IconPlus size={14} />} onClick={() => setShowAddView(true)}>
+
                 Add view
               </Button>
 
               <Button variant="filled" onClick={() => setShowAddView(true)}>
                 Share view
               </Button>
+
              </div>
+
             </Tabs.List>
             <Tabs.Panel value="gallery">
               <LeadGrid />
@@ -90,8 +102,8 @@ export default function Layout({ children }) {
             <Tabs.Panel value="issues">
               <IssuesTab />
             </Tabs.Panel>
-            <Tabs.Panel value="settings">
-              Settings tab content
+            <Tabs.Panel value="shared">
+              <SharedMakeView />
             </Tabs.Panel>
           </Tabs>
         )}
