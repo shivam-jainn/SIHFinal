@@ -10,6 +10,8 @@ import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
 import { UserButton } from '@/components/UserButton/UserButton';
 import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
+import SharedMakeView from '@/components/SharedMakeView/SharedMakeView';
+
 const projects = ["NHAI road 12"];  
 
 export default function Layout({ children }) {
@@ -84,8 +86,8 @@ export default function Layout({ children }) {
             <Tabs.Panel value="messages">
               Messages tab content
             </Tabs.Panel>
-            <Tabs.Panel value="settings">
-              Settings tab content
+            <Tabs.Panel value="shared">
+              <SharedMakeView />
             </Tabs.Panel>
           </Tabs>
         )}
