@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Grid, SimpleGrid, Skeleton, rem } from '@mantine/core';
+
 import MachineStatus from '../MachineStatus/MachineStatus';
 import ConcreteHumidityMonitor from '../ConcreteHumidity/ConcreteHumidity';
 import WorkerEntranceTracker from '../WorkerEnteranceTracker/WorkerEnteranceTracker';
 import { StatsControls } from '../StatsControls/StatsControls';
 import { StatsGridIcons } from '../StatsGridIcons/StatsGridIcons';
+
 const PRIMARY_COL_HEIGHT = rem(300);
 
 export function LeadGrid() {
@@ -32,12 +34,14 @@ export function LeadGrid() {
           <Grid.Col >
 
             
+
           </Grid.Col>
         
         </Grid>
 
         <Grid gutter="md">
           <Grid.Col>
+
 
 
           
@@ -53,6 +57,7 @@ export function LeadGrid() {
           
           </Grid.Col>
         </Grid>
+
 
       </SimpleGrid>
     </Container>
