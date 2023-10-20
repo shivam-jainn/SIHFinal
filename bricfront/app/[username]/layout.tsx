@@ -1,6 +1,6 @@
 "use client"
-import React, { useState } from 'react';
 import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/icons-react';
+import React, { useState } from 'react';
 
 import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
 
@@ -8,13 +8,13 @@ import { LinksGroup } from '@/components/NavbarLinksGroup/NavbarLinksGroup';
 import { AppShell, Box, Button, Modal, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core'; // Import missing components
 import { useDisclosure } from '@mantine/hooks';
 
-import SharedTab from '@/components/TabShared/SharedTab';
-import ViewTab from '@/components/TabView/ViewTab';
-import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
-import styles from './dashBoardLayout.module.css';
 import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
+import SharedTab from '@/components/TabShared/SharedTab';
+import ViewTab from '@/components/TabView/ViewTab';
 import { UserButton } from '@/components/UserButton/UserButton';
+import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
+import styles from './dashBoardLayout.module.css';
 const projects = ["NHAI road 12", 'Add Project +'];
 
 export default function Layout({ children }) {
@@ -96,9 +96,11 @@ export default function Layout({ children }) {
         )}
       </AppShell.Main>
 
-        //  <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
+
+        {/* //  <Modal opened={opened} onClose={close} title="Modal Name" centered size="calc(100vw - 3rem)" >
       //  <AddViewModal onClose={close}/>
-      //</Modal>
+      //</Modal> */}
+
      
     </AppShell>
   );

@@ -1,0 +1,18 @@
+.tableRow:hover {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.tableRow:hover .issueName {
+  text-decoration: underline;
+}
+
+.overlayCustom {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Adjust the alpha value for the desired level of translucency */
+  /* Add other styles as needed */
+}
