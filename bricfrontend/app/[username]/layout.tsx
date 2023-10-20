@@ -2,6 +2,7 @@
 import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
 import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
+import IssuesTab from '@/components/TabIssues/IssuesTab';
 import { UserButton } from '@/components/UserButton/UserButton';
 import ViewTab from '@/components/ViewTab/ViewTab';
 import { AppShell, Box, Button, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core';
@@ -67,7 +68,7 @@ export default function Layout({ children }) {
               <Tabs.Tab value="gallery" style={tabstyles} leftSection={<IconPhoto style={iconStyle} />}>
                 Overview
               </Tabs.Tab>
-              <Tabs.Tab value="messages" style={tabstyles} leftSection={<IconMessageCircle style={iconStyle} />}>
+              <Tabs.Tab value="issues" style={tabstyles} leftSection={<IconMessageCircle style={iconStyle} />}>
                 Issues
               </Tabs.Tab>
               <Tabs.Tab value="shared" style={tabstyles} leftSection={<IconSettings style={iconStyle} />}>
@@ -86,8 +87,8 @@ export default function Layout({ children }) {
             <Tabs.Panel value="gallery">
               <LeadGrid />
             </Tabs.Panel>
-            <Tabs.Panel value="messages">
-              Messages tab content
+            <Tabs.Panel value="issues">
+              <IssuesTab />
             </Tabs.Panel>
             <Tabs.Panel value="settings">
               Settings tab content
