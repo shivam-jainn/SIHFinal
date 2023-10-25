@@ -11,13 +11,7 @@ import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/ic
 import React, { useState } from 'react';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from './dashBoardLayout.module.css';
-
-import AddProject from '@/components/Addproject/AddProject';
-import AddView from '@/components/Addproject/View/AddView';
-import { UserButton } from '@/components/UserButton/UserButton';
-import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
-import SharedMakeView from '@/components/SharedMakeView/SharedMakeView';
-
+import { TableSelection } from '@/components/TableSelection/TableSelection';
 const projects = ["NHAI road 12"];  
 
 
@@ -103,7 +97,8 @@ export default function Layout({ children }) {
               <IssuesTab />
             </Tabs.Panel>
             <Tabs.Panel value="shared">
-              <SharedMakeView />
+              <TableSelection />
+              {/* <SharedMakeView /> */}
             </Tabs.Panel>
           </Tabs>
         )}

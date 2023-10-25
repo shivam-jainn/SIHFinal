@@ -3,13 +3,10 @@ import {
   Divider,
   Input,
   Box,
-  Text,
   Paper,
   Button,
   Stack,
   Card,
-  AspectRatio,
-  Image,
 } from "@mantine/core";
 import { ButtonCopy } from "../ButtonCopy/ButtonCopy";
 import { PillBarSelect } from "../PillBarSelect/PillBarSelect";
@@ -21,10 +18,12 @@ export default function SharedMakeView() {
 
   function handleClickedComponent(componentName: string) {
     if (selectedComponents.includes(componentName)) {
+      // If the component is already selected, remove it from the array
       setSelectedComponents((prevSelected) =>
         prevSelected.filter((item) => item !== componentName)
       );
     } else {
+      // If the component is not selected, add it to the array
       setSelectedComponents((prevSelected) => [...prevSelected, componentName]);
     }
   }
@@ -40,54 +39,57 @@ export default function SharedMakeView() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        marginTop: "2rem",
       }}
     >
       <Paper
-        withBorder
         style={{
           padding: "1rem",
           width: "100%",
-          height: "80%",
-          border: "2px dashed #ffffff",
+          border: "0.5px solid grey",
         }}
       >
-        <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <Input placeholder="view name" />
-          <PillBarSelect />
-        </Box>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "1rem",
+          }}
+        >
+          <Input style={{ flex: 1 }} placeholder="View name" />
+          <PillBarSelect style={{ flex: 1 }} />
+        </div>
         <Divider my="sm" variant="dotted" />
 
-        <Stack>
-          <div
-            onClick={() => handleClickedComponent("StatsControls")}
+        <Stack spacing="sm">
+          <Card
+            shadow="xs"
             style={{
+              cursor: "pointer",
               border: isComponentSelected("StatsControls")
                 ? "2px solid #007bff"
                 : "none",
             }}
+            onClick={() => handleClickedComponent("StatsControls")}
           >
-            <div>
-              <StatsControls />
-            </div>
-          </div>
-          <div
-            onClick={() => handleClickedComponent("StatsGridIcons")}
+            <StatsControls />
+          </Card>
+          <Card
+            shadow="xs"
             style={{
+              cursor: "pointer",
               border: isComponentSelected("StatsGridIcons")
                 ? "2px solid #007bff"
                 : "none",
             }}
+            onClick={() => handleClickedComponent("StatsGridIcons")}
           >
-            <div>
-              <StatsGridIcons />
-            </div>
-          </div>
+            <StatsGridIcons />
+          </Card>
         </Stack>
 
-        <Paper
-          withBorder
+        <Box
           style={{
-            padding: "1rem",
             display: "flex",
             justifyContent: "space-between",
             marginTop: "2rem",
@@ -95,7 +97,7 @@ export default function SharedMakeView() {
         >
           <ButtonCopy />
           <Button style={{ height: "auto" }}>Save</Button>
-        </Paper>
+        </Box>
       </Paper>
     </Box>
   );
