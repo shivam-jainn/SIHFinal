@@ -1,13 +1,13 @@
-import React, { useState } from "react";
 import {
+  Box,
+  Button,
+  Card,
   Divider,
   Input,
-  Box,
   Paper,
-  Button,
   Stack,
-  Card,
 } from "@mantine/core";
+import React, { useState } from "react";
 import { ButtonCopy } from "../ButtonCopy/ButtonCopy";
 import { PillBarSelect } from "../PillBarSelect/PillBarSelect";
 import { StatsControls } from "../StatsControls/StatsControls";
@@ -38,8 +38,8 @@ export default function SharedMakeView() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        marginTop: "2rem",
+       
+        
       }}
     >
       <Paper
@@ -54,6 +54,7 @@ export default function SharedMakeView() {
             display: "flex",
             justifyContent: "space-between",
             marginBottom: "1rem",
+            gap:'4rem',
           }}
         >
           <Input style={{ flex: 1 }} placeholder="View name" />

@@ -1,6 +1,6 @@
-import React from 'react';
-import { PinInput, Box, Text, Paper, Button } from '@mantine/core';
 import SharedMakeView from '@/components/SharedMakeView/SharedMakeView';
+import { Box, Button, Paper, PinInput, Text } from '@mantine/core';
+import React from 'react';
 
 export default function AddView() {
   return (
@@ -11,7 +11,8 @@ export default function AddView() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh', // Center vertically on the screen
+        height: '50vh',
+        marginTop: "2%"
       }}
     >
 
@@ -29,7 +30,7 @@ export default function AddView() {
         </Paper>
     </Box>
 
-      <h1 style={{textAlign:'center'}}>OR</h1>
+      <h1 style={{textAlign:'center', margin:"2% 0"}}>OR</h1>
 
     <Box>
       <SharedMakeView />

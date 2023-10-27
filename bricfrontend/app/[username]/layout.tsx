@@ -3,6 +3,7 @@ import AddProject from '@/components/Addproject/AddProject';
 import AddView from '@/components/Addproject/View/AddView';
 import { LeadGrid } from '@/components/LeadGrid/LeadGrid';
 import IssuesTab from '@/components/TabIssues/IssuesTab';
+import { TableSelection } from '@/components/TableSelection/TableSelection';
 import { UserButton } from '@/components/UserButton/UserButton';
 import ViewTab from '@/components/ViewTab/ViewTab';
 import { AppShell, Box, Button, ScrollArea, Tabs, UnstyledButton, rem } from '@mantine/core';
@@ -11,7 +12,6 @@ import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/ic
 import React, { useState } from 'react';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from './dashBoardLayout.module.css';
-import { TableSelection } from '@/components/TableSelection/TableSelection';
 const projects = ["NHAI road 12"];  
 
 
@@ -83,9 +83,9 @@ export default function Layout({ children }) {
                 Add view
               </Button>
 
-              <Button variant="filled" onClick={() => setShowAddView(true)}>
+              {/* <Button variant="filled" onClick={() => setShowAddView(true)}>
                 Share view
-              </Button>
+              </Button> */}
 
              </div>
 
