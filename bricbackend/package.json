@@ -1,0 +1,45 @@
+{
+  "name": "bricback",
+  "version": "0.0.1",
+  "description": "typed Backend for bricboard",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam-jainn/SIHFinal.git"
+  },
+  "keywords": [
+    "IOT",
+    "Construction",
+    "Backend",
+    "Typescript"
+  ],
+  "author": "Bricboard team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam-jainn/SIHFinal/issues"
+  },
+  "homepage": "https://github.com/shivam-jainn/SIHFinal#readme",
+  "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "chart.js": "^4.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "prisma": "^5.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.18",
+    "@types/node": "^20.8.9",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
