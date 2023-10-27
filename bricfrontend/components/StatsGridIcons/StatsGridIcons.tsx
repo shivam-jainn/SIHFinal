@@ -4,9 +4,9 @@ import { IconArrowUpRight, IconArrowDownRight } from '@tabler/icons-react';
 import classes from './StatsGridIcons.module.css';
 
 const data = [
-  { title: 'Revenue', value: '$13,456', diff: 34 },
-  { title: 'Profit', value: '$4,145', diff: -13 },
-  { title: 'Coupons usage', value: '745', diff: 18 },
+  { title: 'Completed Projects', value: '28', diff: 12 },
+  { title: 'Ongoing Projects', value: '15', diff: -5 },
+  { title: 'Total Workers', value: '100', diff: 20 },
 ];
 
 export function StatsGridIcons() {
