@@ -31,11 +31,14 @@ export default function Layout({ children }) {
   ));
 
   function UnstyleBoxSomething({ label }) {
+    const linkUrl = `/dashboard`;
     return (
       <UnstyledButton className={classes.control}>
+        <a href={linkUrl} style={{ textDecoration: 'none', color: 'inherit' }}>
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           {label}
         </Box>
+        </a>
       </UnstyledButton>
     );
   }
