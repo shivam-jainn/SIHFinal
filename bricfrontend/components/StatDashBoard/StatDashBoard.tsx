@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-type MachineStats = {
+interface MachineStat {
     Machine_ID: string;
     Timestamp: string;
     Machine_Temperature_C: number;
@@ -8,35 +8,36 @@ type MachineStats = {
     Vibration_mm_s2: number;
     Environment_Temperature_C: number;
     Humidity: number;
-};
+}
 
 const Dash: React.FC = () => {
-    const [machineStats, setMachineStats] = useState<MachineStats[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [machineStats, setMachineStats] = useState<MachineStat[]>([]);
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch('/data.json'); // Assuming the JSON file is in your public directory
-                const data: MachineStats[] = await response.json();
+                const data: MachineStat[] = await response.json();
                 setMachineStats(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
+        // Fetch data initially
+        fetchData();
+
         // Set up an interval to refresh data every 5 seconds
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % machineStats.length);
-        }, 5000);
-
-        // Fetch data initially and clear the interval when the component unmounts
-        fetchData();
+            fetchData(); // Fetch new data on each interval
+        }, 3000);
 
         return () => {
-            clearInterval(interval);
+            clearInterval(interval); // Clear the interval when the component unmounts
         };
-    }, [machineStats]);
+    }, []);
 
     return (
         <div>
