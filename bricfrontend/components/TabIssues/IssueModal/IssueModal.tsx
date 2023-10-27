@@ -1,27 +1,31 @@
+// IssueModal.tsx
 import React from 'react';
+import { Badge, Divider, Text, Title } from '@mantine/core';
 
-import { Badge, Divider, Table, Text, Title } from '@mantine/core';
-import classes from './IssueModal.module.css';
+const IssueModal = (props) => {
+  const { data } = props;
 
-const IssueModal = (props:any) => {
-return(
-<>
-<Title> Issue </Title>
-<Text size="md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nobis dolores ad fugiat nostrum facilis, id voluptatum qui dicta sit odit accusamus, cupiditate expedita, quis obcaecati distinctio quibusdam dolore aliquid!</Text>
+  if (!data) {
+    return null; // Handle the case when no data is selected
+  }
 
-<div style={{display:"flex", alignItems:"center", gap:5, margin:"10px "}}>
-    <div><b>
-        Shivam Jain  
-        </b> opened issue 2 days ago</div>
-<Badge color="green">OPEN</Badge>
-<Badge color="blue">High Priority</Badge>
-{/* <Badge color="blue">Badge</Badge> */}
-</div>
-<Divider/>
+  return (
+    <>
+      <Title> Issue </Title>
+      <Text size="md">{data.issue}</Text>
 
-
-</>
-);
+      <div style={{ display: "flex", alignItems: "center", gap: 5, margin: "10px " }}>
+        <div>
+          <b>{data.name}</b> opened issue {data.lastActive} ago
+        </div>
+        {data.active ? <Badge color="green">OPEN</Badge> : <Badge color="gray">CLOSED</Badge>}
+        <Badge color="blue">{data.role}</Badge>
+        {/* Add more badges or information as needed */}
+      </div>
+      <Divider />
+      {/* You can add more content specific to the issue here */}
+    </>
+  );
 };
 
 export default IssueModal;
