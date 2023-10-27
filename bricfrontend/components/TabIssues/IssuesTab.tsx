@@ -87,14 +87,20 @@ export default function IssuesTab() {
   };
 
   const rows = data.map((item, index) => (
-    <Table.Tr onClick={() => handleRowClick(index)} className={classes.tableRow} key={item.name}>
+    <Table.Tr
+      onClick={() => handleRowClick(index)}
+      className={classes.tableRow}
+      key={item.name}
+    >
       <Table.Td>
-        <Text className={classes.issueName} fz="sm" fw={500}>
-          {item.name}
-        </Text>
-        <Text fz="xs" c="dimmed">
-          {item.desc}
-        </Text>
+        <div className={classes.issueNameInfo}>
+          <Text fz="sm" fw={500}>
+            {item.name}
+          </Text>
+          <Text fz="xs" c="dimmed">
+            {item.desc}
+          </Text>
+        </div>
       </Table.Td>
 
       <Table.Td>{item.role}</Table.Td>
@@ -110,23 +116,23 @@ export default function IssuesTab() {
   ));
 
   return (
-    <>
-    <Table.ScrollContainer minWidth={800}>
-      <Table verticalSpacing="sm">
-        <Table.Thead>
-          <Table.Tr>
-            <Table.Th>Issue</Table.Th>
-            <Table.Th>From</Table.Th>
-            <Table.Th>Issue Posted</Table.Th>
-            <Table.Th>Issue Status</Table.Th>
-          </Table.Tr>
-        </Table.Thead>
-        <Table.Tbody>{rows}</Table.Tbody>
-      </Table>
-    </Table.ScrollContainer>
-    <Modal opened={opened} onClose={close} title="" size="calc(100vw - 3rem)" centered>
-      <IssueModal data={selectedData} />
-    </Modal>
-    </>
+    <div className={classes.issuesTab}>
+      <Table.ScrollContainer minWidth={800}>
+        <Table verticalSpacing="sm">
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>Issue</Table.Th>
+              <Table.Th>From</Table.Th>
+              <Table.Th>Issue Posted</Table.Th>
+              <Table.Th>Issue Status</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
+        </Table>
+      </Table.ScrollContainer>
+      <Modal opened={opened} onClose={close} title="Issue Details" size="xl" centered>
+        <IssueModal data={selectedData} />
+      </Modal>
+    </div>
   );
 }
