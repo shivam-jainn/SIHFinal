@@ -20,11 +20,15 @@
     "@mantine/modals": "^7.1.0",
     "@mantine/notifications": "^7.1.0",
     "@tabler/icons-react": "^2.38.0",
+    "chart.js": "^4.4.0",
     "dayjs": "^1.11.10",
     "next": "latest",
     "react": "latest",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "latest",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
