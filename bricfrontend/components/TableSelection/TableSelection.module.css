@@ -1,0 +1,9 @@
+.rowSelected {
+  background-color: var(--mantine-color-blue-light);
+}
+
+.addViewRow{
+  width: 100%;
+  border-top : 1px gray solid;
+  padding: 2em;
+}
