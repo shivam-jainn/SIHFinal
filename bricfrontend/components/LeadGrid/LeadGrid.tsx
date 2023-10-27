@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, SimpleGrid, Skeleton, rem } from '@mantine/core';
+import { Container, Grid, SimpleGrid, rem } from '@mantine/core';
 
 import MachineStatus from '../MachineStatus/MachineStatus';
 import ConcreteHumidityMonitor from '../ConcreteHumidity/ConcreteHumidity';
@@ -17,48 +17,27 @@ export function LeadGrid() {
     { name: 'Machine B', status: 'idle' },
     // ... and so on
   ];
-  
 
   return (
     <Container my="md">
-          <StatsControls />
-          <StatsGridIcons />
+      <StatsControls />
+      <StatsGridIcons />
 
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
-      <Grid gutter="md">
-          <Grid.Col>
-
-          <ConcreteHumidityMonitor humidityPercentage={75.5} />
-                      
+        <Grid gutter="md">
+          <Grid.Col span={6}>
+            <MachineStatus machineData={machineData} />
           </Grid.Col>
-          <Grid.Col >
-
-            
-
+          <Grid.Col span={6}>
+            <WorkerEntranceTracker workerCount={90} />
           </Grid.Col>
-        
         </Grid>
 
         <Grid gutter="md">
-          <Grid.Col>
-
-
-
-          
-          </Grid.Col>
-          <Grid.Col span={6}>
-          <MachineStatus machineData={machineData} />
-
-          
-          </Grid.Col>
-          <Grid.Col span={6}>
-          <WorkerEntranceTracker workerCount={23} />
-
-          
+          <Grid.Col span={12}>
+            <ConcreteHumidityMonitor humidityPercentage={15.5} />
           </Grid.Col>
         </Grid>
-
-
       </SimpleGrid>
     </Container>
   );

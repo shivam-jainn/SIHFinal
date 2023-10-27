@@ -12,7 +12,7 @@ import { IconMessageCircle, IconPhoto, IconPlus, IconSettings } from '@tabler/ic
 import React, { useState } from 'react';
 import classes from '../../components/NavbarLinksGroup/NavbarLinksGroup.module.css';
 import styles from './dashBoardLayout.module.css';
-const projects = ["NHAI road 12"];  
+const projects = ["NHAI road 12"];
 
 
 export default function Layout({ children }) {
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
   const [showAddView, setShowAddView] = useState(false);
   const [showAddProject, setShowAddProject] = useState(false);
 
-  const addViewStyle = { position:'absolute', right:50, }
+  const addViewStyle = { position: 'absolute', right: 50, }
 
 
   const tabstyles = { fontSize: "20px" };
@@ -77,17 +77,17 @@ export default function Layout({ children }) {
                 Shared
               </Tabs.Tab>
 
-             <div style={{position:'absolute', display:"flex", gap:"1rem",right:50}}>
-             <Button variant="filled" rightSection={<IconPlus size={14} />} onClick={() => setShowAddView(true)}>
+              <div style={{ position: 'absolute', display: "flex", gap: "1rem", right: 50 }}>
+                <Button variant="filled" rightSection={<IconPlus size={14} />} onClick={() => setShowAddView(true)}>
 
-                Add view
-              </Button>
+                  Add view
+                </Button>
 
-              {/* <Button variant="filled" onClick={() => setShowAddView(true)}>
+                {/* <Button variant="filled" onClick={() => setShowAddView(true)}>
                 Share view
               </Button> */}
 
-             </div>
+              </div>
 
             </Tabs.List>
             <Tabs.Panel value="gallery">

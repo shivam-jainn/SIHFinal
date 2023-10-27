@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import { UnstyledButton, Text, Paper, Group, rem } from '@mantine/core';
 import {
-  IconSwimming,
-  IconBike,
-  IconRun,
   IconChevronDown,
   IconChevronUp,
+  IconProgressCheck,
+  IconSquareRoundedCheck,
+  IconUsers
 } from '@tabler/icons-react';
 import classes from './StatsControls.module.css';
 
 const data = [
-  { icon: IconRun, label: 'Running' },
-  { icon: IconSwimming, label: 'Swimming' },
-  { icon: IconBike, label: 'Bike' },
+  { icon: IconProgressCheck, label: 'Daily Progress' },
+  { icon: IconUsers, label: 'Personel Attendance' },
+  { icon: IconSquareRoundedCheck, label: 'Issues Solved' },
 ];
 
 export function StatsControls() {
@@ -29,7 +29,7 @@ export function StatsControls() {
       <div>
         <Text className={classes.label}>{stat.label}</Text>
         <Text fz="xs" className={classes.count}>
-          <span className={classes.value}>{Math.floor(Math.random() * 6 + 4)}km</span> / 10km
+          <span className={classes.value}>{Math.floor(Math.random() * 100) + 1}%</span> / 100
         </Text>
       </div>
     </Paper>
