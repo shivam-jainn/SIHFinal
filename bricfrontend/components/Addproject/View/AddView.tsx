@@ -11,7 +11,7 @@ export default function AddView() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '50vh',
+        // height: '50vh',
         marginTop: "2%"
       }}
     >
